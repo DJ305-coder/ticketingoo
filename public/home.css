@@ -1,0 +1,138 @@
+.catogories > .active {
+    background-color: #e73801 !important;
+    color: white !important;
+    border: 0px !important;
+}
+.bg-orange {
+    background-color: #e73801 !important;
+}
+.card-container {
+    display: block;
+    position: relative;
+    color: white;
+    width: 400px;
+    height: 250px;
+    transition: width 1s;
+}
+
+.card-container:hover {
+    color: white;
+    width: 430px;
+    height: auto;
+}
+
+.card-container > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Bottom left text */
+.bottom-left {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    border-radius: 10px;
+    padding-left: 16px;
+    padding-bottom: 8px;
+    background: linear-gradient(
+        0deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 212, 255, 0) 100%
+    );
+}
+.shows-cards {
+    background-image: url(images/cinema-doodle.png);
+}
+
+.text-voilet {
+    background-color: #030129;
+}
+.bg-voilet {
+    background-color: #030129;
+}
+.text-orange {
+    color: #e73801;
+}
+.navbar-toggler-icon {
+    color: white;
+}
+#yuu {
+    color: red;
+}
+.navtitle {
+    color: red;
+}
+.navbar-toggler-icon {
+    color: antiquewhite;
+}
+.social-icons {
+    margin-right: 0px;
+
+    color: white;
+    font-size: 15px;
+    width: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+.carousel-caption {
+    padding-bottom: 0px !important;
+}
+
+.nav-tabs {
+    justify-content: center;
+    flex-direction: column;
+}
+
+.controls form > div input[type="search"] {
+    max-width: 200px;
+    height: 40px;
+}
+
+.button-search {
+    height: 40px;
+}
+
+.controls form > div select {
+    max-width: 200px;
+}
+
+.controls form > div label {
+    vertical-align: middle;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+}
+
+.sorting-options {
+    margin: 0px;
+    padding: 0px;
+}
+.showscard {
+    width: 400px;
+    height: 250px;
+}
+
+@media (max-width: 992px) {
+    .social-icons {
+        margin: auto;
+        margin-bottom: 10px;
+    }
+    .controls form {
+        flex-direction: column;
+    }
+
+    .controls {
+        height: auto;
+    }
+
+    .nav-tabs {
+        flex-direction: column;
+    }
+}
