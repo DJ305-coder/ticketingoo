@@ -44,8 +44,10 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin'], function () {
 
 
 // front-end route
+Route::get('/event-detail',[FrontController::class,'event_detail']);
 
-// Route::get('/',[FrontController::class,'index'])->name('/');
+
+Route::get('/',[FrontController::class,'index'])->name('/');
 Route::get('/all-blogs', [FrontController::class,'get_blogs']);
 Route::get('/blog-detail/{id}', [FrontController::class,'blog_detail']);
 
@@ -71,4 +73,5 @@ Route::get('test', function(Request $request){
 // webiste routes
 
 
-Route::view('/','index');
+Route::view('/about-us','about_us');
+Route::view('/contact-us','contact_us');

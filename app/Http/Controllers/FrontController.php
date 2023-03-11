@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\Rating;
 use App\Models\Like;
+use App\Models\Banner;
+
 use Session;
 use DB;
 class FrontController extends Controller
@@ -13,19 +15,22 @@ class FrontController extends Controller
     public function index(Request $request)
     {
         try{
-            $blogs = DB::table('blogs')->whereNull('deleted_at')->paginate(5);
-            if ($request->ajax()) {
-                $query = $request->search_query;
-                $order = $request->order;
-                $date = $request->date;
-                $blogs = Blog::getBlogs($query,$order,$date);
-                if($blogs->isEmpty()){
-                    return '<div class="d-flex"><h4 class="mx-auto">Data Not Found</h4></div>';
-                }else{
-                    return view('blog_data', compact('blogs'))->render();    
-                }
-            }
-            return view('index', compact('blogs'));
+            // $blogs = DB::table('blogs')->whereNull('deleted_at')->paginate(5);
+            // if ($request->ajax()) {
+            //     $query = $request->search_query;
+            //     $order = $request->order;
+            //     $date = $request->date;
+            //     $blogs = Blog::getBlogs($query,$order,$date);
+            //     if($blogs->isEmpty()){
+            //         return '<div class="d-flex"><h4 class="mx-auto">Data Not Found</h4></div>';
+            //     }else{
+            //         return view('blog_data', compact('blogs'))->render();    
+            //     }
+            // }
+            $banners = Banner::latest()->get();
+
+            // return $banners;
+            return view('index', compact('banners'));
         }catch(\Exception $e){
             $message = $e->getMessage();
             return response()->json(['Error' => $message]);
@@ -91,5 +96,10 @@ class FrontController extends Controller
             $message = $e->getMessage();
             return response()->json(['Error' => $message]);
         }
+    }
+
+
+    public function event_detail(){
+        return view('event_detail');
     }
 }

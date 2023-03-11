@@ -16,7 +16,6 @@ class LoginController extends Controller
     public function index()
     {
         try{
-            $total_banners = Banner::where('status','active')->count();
             return view('admin.login');
         }catch(\Exception $e){
             $message = $e->getMessage();
@@ -28,7 +27,7 @@ class LoginController extends Controller
     public function dashboard_view()
     {
         try{
-            $total_banners = Banner::where('status','active')->count();
+            $total_banners = Banner::count();
             return view('admin.dashboard.dashboard',compact('total_banners'));
         }catch(\Exception $e){
             $message = $e->getMessage();
