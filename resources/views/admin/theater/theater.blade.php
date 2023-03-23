@@ -237,7 +237,7 @@
     });
 </script>
 
-<!-- Delete blog -->
+<!-- Delete theater -->
 <script>
     $(document).on("click", ".DeleteBtn", function () {
         const theater_id = $(this).data("id")

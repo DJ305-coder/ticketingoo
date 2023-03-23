@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Document</title>
+@extends('frontend.layout.layout')
+@section('header')
+    <title>Event Detail</title>
     <style>
         .show_img>img {
             width: 100%;
@@ -64,36 +56,9 @@
             background-color: #E73801;
         }
     </style>
-</head>
-
-<body>
-    <nav class="navbar navbar-expand-lg bg-voilet" data-bs-theme="dark">
-    <div class="container-fluid">
-        <a class="navbar-brand text-light navtitle" id="yuu" href="{{url('')}}"><img src="{{asset('images/logo.png')}}" alt="logo" style="height:50px;"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <!-- <span class="navbar-toggler-icon"></span> -->
-        <i class="fa fa-navicon" style="color:white;"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-            <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link text-light" href="#">About Us</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link text-light" href="#">Contact Us</a>
-            </li>
-        </ul>
-        <hr style="color:white;">
-        <div class="social-icons">
-            <i class="fa fa-facebook"></i>
-            <i class="fa fa-instagram"></i>
-            </div>
-        </div>
-    </div>
-    </nav>
+@endsection
+@section("content")
+   
     <div class="container-fluid show-container py-2">
         <a class="fa fa-chevron-circle-left" id="back-icon" href="#"></a>
         <div class="container show_img my-2">
@@ -165,6 +130,9 @@
     <button type="button" class="btn btn-lg btn-danger" id="book-btn">Book tickets now</button>
 
 
-</body>
 
-</html>
+@endsection
+
+@section("script")
+
+@endsection

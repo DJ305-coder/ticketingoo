@@ -31,7 +31,7 @@ class BannerController extends Controller
                     return !empty($image) ? $image : '-' ;
                 })
                 ->addColumn('action', function ($row) {
-                    $actionBtn = '<button type="button" data-id="' . $row->id . '" class="btn btn-success EditBtn" title="Edit">Edit</i></button>
+                    $actionBtn = '<button type="button" data-id="' . $row->id . '" class="btn btn-success EditBtn" title="Edit">Edit</button>
                                   <button type="button" data-id="' . $row->id . '" class="btn btn-danger DeleteBtn" title="Delete">Delete</button>';
                     return $actionBtn;
                 })

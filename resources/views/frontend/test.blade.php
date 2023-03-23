@@ -1,7 +1,4 @@
 @extends('frontend.layout.layout')
-@section('header')
-    <title>Homepage</title>
-@endsection
 @section("content")
     <!-- ============== slider-area-start ============== -->
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
@@ -64,27 +61,15 @@
                 tabindex="0">
                 <div class="display-4 text-center my-2 text-light">Available Shows</div>
                 <div class="container-fluid d-flex flex-wrap justify-content-center ">
-                    @foreach($events as $event)
-                    <a href="{{url('event-detail')}}/{{$event->id}}" class="card-container my-2 mx-2">
-                        <img src="{{$event->event_image}}" class="card-img" alt="...">
+                    <a href="{{url('event-detail')}}" class="card-container my-2 mx-2">
+                        <img src="{{asset('images/card-5.jpg')}}" class="card-img" alt="...">
                         <div class="bottom-left">
-                            <h5 class="card-title">{{$event->title}}</h5>
-                            <p class="card-text mb-0">
-                                {!! Str::limit($event->description, str_word_count($event->description), '...') !!}
-                            </p>
-
-                            @php
-                                $eventDate = \Carbon\Carbon::parse($event->date);
-                                $now = \Carbon\Carbon::now();
-                                $daysRemaining = $now->diffInDays($eventDate);
-                            @endphp
-
-                            <p class=" mt-0"></p><small>Realeased {{ $daysRemaining }} days ago</small></p>
+                            <h5 class="card-title">Khatara</h5>
+                            <p class="card-text mb-0">Presentred by - Department of Performing Arts Central University of Jharkhand</p>
+                            <p class=" mt-0"></p><small>Realeased 5 days ago</small></p>
                         </div>
                     </a>
-                    @endforeach
-                    
-                    <!-- <a href="{{url('event-detail')}}" class="card-container my-2 mx-2">
+                    <a href="{{url('event-detail')}}" class="card-container my-2 mx-2">
                         <img src="{{asset('images/card-1.jpg')}}" class="card-img" alt="...">
                         <div class="bottom-left">
                             <h5 class="card-title">To Rajhans Ek</h5>
@@ -124,7 +109,7 @@
                             <p class="card-text mb-0">Presentred by - Department of Performing Arts Central University of Jharkhand</p>
                             <p class=" mt-0"></p><small>Realeased 5 days ago</small></p>
                         </div>
-                    </a> -->
+                    </a>
                 </div>
 
             </div>
@@ -138,5 +123,6 @@
 @endsection
 
 @section("script")
+<script src="{{asset('front/js/homepage.js')}}"></script>
 
 @endsection

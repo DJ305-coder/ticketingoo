@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\Auth\ForgotController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\TheaterController;
+use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\FrontController;
 
 use Illuminate\Http\Request;
@@ -38,8 +39,16 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin'], function () {
    Route::delete('theater/{id}', [TheaterController::class,'destroy'])->name('theater.destroy');
    Route::get('theater-data-table', [TheaterController::class, 'data_table']);
 
+   Route::resource('events', EventController::class, [
+      'only' => ['index', 'store', 'create', 'show', 'edit']
+   ]);
+   Route::get('event-data-table', [EventController::class, 'data_table']);
+   Route::post('/event-title-exists', [EventController::class, 'event_title_exists']);
+   Route::get('event/{id}', [EventController::class, 'show']);
+   Route::delete('event-delete/{id}', [EventController::class,'destroy'])->name('event.destroy');
 
-   Route::get('logout', [BannerController::class, 'logout']);
+
+   Route::get('logout', [LoginController::class, 'logout']);
 });
 
 
@@ -75,3 +84,4 @@ Route::get('test', function(Request $request){
 
 Route::view('/about-us','about_us');
 Route::view('/contact-us','contact_us');
+
