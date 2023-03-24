@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Event;
+use App\Models\Theater;
 use DataTables;
 use Str;
 class EventController extends Controller
@@ -27,7 +28,8 @@ class EventController extends Controller
      */
     public function create()
     {
-        return view('admin.events.add-event');
+        $theaters = Theater::latest()->get();
+        return view('admin.events.add-event', compact('theaters'));
     }
 
     // This function is for datatable
@@ -163,10 +165,11 @@ class EventController extends Controller
      */
     public function edit($id)
     {
-        $event = Event::where('id','=',$id)
-                    ->select('id','title','date','description','slug_url','event_image')
-                    ->first();
-        return view('admin.events.add-event', compact('event'));
+        $event = Event::where('id',$id)->first();
+
+        $theaters = Theater::latest()->get();
+
+        return view('admin.events.add-event', compact('event','theaters'));
     }
 
     public function destroy($id)

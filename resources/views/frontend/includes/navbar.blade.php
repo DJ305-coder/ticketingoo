@@ -2,7 +2,7 @@
     <!-- ============= header-area-start ==================== -->
     <nav class="navbar navbar-expand-lg bg-voilet" data-bs-theme="dark">
   <div class="container-fluid">
-    <a class="navbar-brand text-light navtitle" id="yuu" href="#"><img src="images/logo.png" alt="logo" style="height:50px;"></a>
+    <a class="navbar-brand text-light navtitle" id="yuu" href="{{url('/')}}"><img src="{{asset('images/logo.png')}}" alt="logo" style="height:50px;"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <!-- <span class="navbar-toggler-icon"></span> -->
       <i class="fa fa-navicon" style="color:white;"></i>

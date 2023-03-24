@@ -53,7 +53,7 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin'], function () {
 
 
 // front-end route
-Route::get('/event-detail',[FrontController::class,'event_detail']);
+Route::get('/event-detail/{id}',[FrontController::class,'event_detail']);
 
 
 Route::get('/',[FrontController::class,'index'])->name('/');

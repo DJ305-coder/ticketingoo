@@ -62,17 +62,17 @@
     <div class="container-fluid show-container py-2">
         <a class="fa fa-chevron-circle-left" id="back-icon" href="#"></a>
         <div class="container show_img my-2">
-            <img src="{{asset('images/card-7.jpg')}}" alt="Show_img">
+            <img src="{{$event->event_image}}" alt="Show_img">
         </div>
         <div class="container content">
-            <div class="display-4" id="show-title">Khatara</div>
+            <div class="display-4" id="show-title">{{$event->title}}</div>
             <hr>
             <div class="info d-flex flex-wrap justify-content-center">
                 <div class="present mx-2">
-                    <b class="label">Presented by - </b> <span class="data">Aapal Ghar</span>
+                    <b class="label">Presented by - </b> <span class="data">{{$event->presented_by}}</span>
                 </div>
                 <div class="writer-directer mx-2">
-                    <b class="label">Writer and Directer - </b> <span class="data">Amol Devidas Salwe</span>
+                    <b class="label">Writer and Directer - </b> <span class="data">{{$event->writer_and_directers}}</span>
                 </div>
             </div>
         </div>
@@ -80,14 +80,11 @@
     <div class="container-fluid description py-3">
         <div class="container text-light">
             <b>Description : </b><br>
-            <small>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore qui iste praesentium eum distinctio ab
-                dicta amet porro inventore pariatur quibusdam ut unde, ex at sit quam dolorum sint repellendus.
-            </small>
+            <p>{!! $event->description !!}</p>
         </div>
     </div>
 
-    <div class="text-center display-6 text-light mt-3">
+    <!-- <div class="text-center display-6 text-light mt-3">
         Cast
     </div>
     <div class="cast my-2 container d-flex flex-wrap justify-content-center py-2">
@@ -126,10 +123,8 @@
             <b>Harish Bawaskar</b><br>
             <small>Lead Actor</small>
         </div>
-    </div>
+    </div> -->
     <button type="button" class="btn btn-lg btn-danger" id="book-btn">Book tickets now</button>
-
-
 
 @endsection
 

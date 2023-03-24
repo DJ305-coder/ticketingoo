@@ -11,10 +11,14 @@ class Event extends Model
 
     protected $fillable = [
         'title',
+        'theater_id',
         'description',
         'event_image',
         'date',
         'slug_url',
+        'presented_by',
+        'event_type',
+        'writer_and_directers',
         'created_by',
         'modified_by',
         'created_ip_address',

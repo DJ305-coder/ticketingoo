@@ -25,18 +25,37 @@
                             <form action="{{route('events.store')}}" method="post" id="event_form" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
+                                
                                     <div class="col-lg-8">
                                         <div class="row">
-                                            <div class="col-lg-12">
+                                            <div class="col-lg-6">
                                                 <div class="basic-form">
-                                                    <input type="hidden" name="txtpkey" id="txtpkey" value="{{!empty($event->id) ? $event->id : ''}}">
-                                                    <div class="form-group">
-                                                        <label>Event
-                                                            Title</label>
-                                                        <input type="text" name="title" id="title" class="form-control input-flat" value="{{!empty($event->title) ? $event->title : ''}}" />
+                                                    <label>Select Theater</label>
+                                                    <select class="form-control" name="theater_id" id="theater_id">
+                                                        <option value="" selected disabled>Select Theater</option>
+                                                        @if ($theaters->isNotEmpty())
+                                                            @foreach ($theaters as $theater)
+                                                            <option {{!empty($event->theater_id) && $event->theater_id == $theater->id ? 'selected' : ''; }} value="{{$theater->id}}">{{$theater->theater_name}}</option>
+                                                            @endforeach
+                                                        @endif
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="basic-form">
+                                                            <input type="hidden" name="txtpkey" id="txtpkey" value="{{!empty($event->id) ? $event->id : ''}}">
+                                                            <div class="form-group">
+                                                                <label>Event
+                                                                    Title</label>
+                                                                <input type="text" name="title" id="title" class="form-control input-flat" value="{{!empty($event->title) ? $event->title : ''}}" />
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            
                                             <div class="col-lg-6">
                                                 <label>Event Date</label>
                                                 <div class="input-group">
@@ -44,6 +63,14 @@
                                                     <span class="input-group-append"><span class="input-group-text"><i class="mdi mdi-calendar-check"></i></span></span>
                                                 </div>
                                                 <label id="datepicker-error" class="error" for="datepicker"></label>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="basic-form">
+                                                    <div class="form-group">
+                                                        <label>Presented by</label>
+                                                        <input type="text" name="presented_by" id="presented_by" class="form-control input-flat" value="{{!empty($event->presented_by) ? $event->presented_by : ''}}" />
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -58,7 +85,26 @@
                                         </div>
                                         <input type="hidden" name="old_image" id="old_image" value="{{!empty($event->event_image) ?  $event->event_image : ''}}">
                                     </div>
-
+                                    <div class="col-lg-6">
+                                        <div class="basic-form">
+                                            <div class="form-group">
+                                                <label>Writer and Directer</label>
+                                                <input type="text" name="writer_and_directers" id="writer_and_directers" class="form-control input-flat" value="{{!empty($event->writer_and_directers) ? $event->writer_and_directers : ''}}" />
+                                            </div>
+                                        </div>
+                                        <div class="basic-form">
+                                            <div class="form-group">
+                                                <label>Select Show Category</label>
+                                                <select class="form-control" id="event_type" name="event_type">
+                                                    <option value="" disabled selected>Select Show</option>
+                                                    <option value="live" {{!empty($event->event_type) && $event->event_type == 'live' ? 'selected' : ''}}>Live</option>
+                                                    <option value="plays" {{!empty($event->event_type) && $event->event_type == 'plays' ? 'selected' : ''}} >Plays</option>
+                                                    <option value="music" {{!empty($event->event_type) && $event->event_type == 'music' ? 'selected' : ''}}>Music</option>  
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
                                     <div class="col-lg-12 summernote-no-padd">
                                         <div class="">
                                             <div class="card-body">
