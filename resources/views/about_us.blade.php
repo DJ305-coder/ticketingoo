@@ -24,7 +24,7 @@
             <p>We have been an established and popular company with an excellent track record for the best customers
                 satisfaction. We have never compromised on the quality and the services providing to the customer. We
                 believe in
-                keeping the customers happy & providing them with service at a very competent price. Ree</p>
+                keeping the customers happy & providing them with service at a very competent price.</p>
 
         </div>
 
