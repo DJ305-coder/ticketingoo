@@ -83,5 +83,9 @@ Route::get('test', function(Request $request){
 
 
 Route::view('/about-us','about_us');
+Route::view('/privacy-policy','privacy_policy');
 Route::view('/contact-us','contact_us');
+Route::view('/terms-conditions','terms_conditions');
+Route::view('/delivery-shipping-policy','delivery_shipping_policy');
+Route::view('/cancellation-refund','cancellation_refund');
 

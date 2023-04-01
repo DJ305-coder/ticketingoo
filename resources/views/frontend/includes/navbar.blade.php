@@ -21,8 +21,8 @@
       </ul>
       <hr style="color:white;">
       <div class="social-icons">
-        <i class="fa fa-facebook"></i>
-        <i class="fa fa-instagram"></i>
+        <a href="https://www.facebook.com/profile.php?id=100090583262411&mibextid=ZbWKwL" class="nav-link text-light fa fa-facebook"></a>
+        <a href="https://instagram.com/ticketingoo.official?igshid=YmMyMTA2M2Y=" class="nav-link text-light fa fa-instagram"></a>
         </div>
     </div>
   </div>
