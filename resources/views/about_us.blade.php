@@ -5,7 +5,6 @@
         .bg-voilet {
             background-color: #020028;
         }
-
         .text-orange {
             color: #E73801;
         }
@@ -15,7 +14,7 @@
     
     <div class="container-fluid p-0">
         <div class="container my-4 mc-auto">
-            <img src="images/logo.png" class="d-block mx-auto" alt="">
+            <img src="images/logo-dark.png" class="d-block mx-auto" alt="">
         </div>
         
         <div class="text-center container">

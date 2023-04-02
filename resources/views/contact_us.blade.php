@@ -18,7 +18,13 @@
 @section("content")
     
 <div class="container-fluid bg-orange p-2">
-        <div class="display-6 text-center text-light my-2"><b>To contact us,</b>  please fill out the form below </div>
+        <div class="container display-6 text-center text-light my-2"><b>To contact us,</b>  please fill out the form below or visit us at</div>
+        <div class="container text-light my-3 text-center"><i class="fa fa-map-marker"></i>
+        Honda Vihan Honda Two Wheeler, 1st Floor, B-Type,F.No.103,
+        Gut No. 145, Laxmi Residency, Shahapur, Mumbai Nashik
+        Highway, Shahapur, Cherpoli, Thane, Maharashtra, 421601
+        </div>
+        <hr class="container text-light">
         <div class="container bg-light p-4 rounded">
             <form>
                 <div class="mb-3">
@@ -34,7 +40,7 @@
                     <input type="number" class="form-control" id="exampleInputPassword1">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Massage</label>
+                    <label for="exampleInputPassword1" class="form-label">Massege</label>
                     <textarea type="number" class="form-control" id="exampleInputPassword1"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary mx-auto d-block bg-voilet">Submit</button>
