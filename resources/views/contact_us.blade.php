@@ -19,7 +19,7 @@
     
 <div class="container-fluid bg-orange p-2">
         <div class="container display-6 text-center text-light my-2"><b>To contact us,</b>  please fill out the form below or visit us at</div>
-        <div class="container text-light my-3"><i class="fa fa-map-marker"></i>
+        <div class="container text-light my-3 text-center"><i class="fa fa-map-marker"></i>
         Honda Vihan Honda Two Wheeler, 1st Floor, B-Type,F.No.103,
         Gut No. 145, Laxmi Residency, Shahapur, Mumbai Nashik
         Highway, Shahapur, Cherpoli, Thane, Maharashtra, 421601

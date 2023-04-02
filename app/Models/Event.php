@@ -14,11 +14,17 @@ class Event extends Model
         'theater_id',
         'description',
         'event_image',
+        'cover_image',
         'date',
+        'event_time',
+        'short_description',
+        'ticket_price',
+        'director',
+        'location',
         'slug_url',
         'presented_by',
         'event_type',
-        'writer_and_directers',
+        'writer',
         'created_by',
         'modified_by',
         'created_ip_address',
@@ -27,6 +33,10 @@ class Event extends Model
     ];
 
     public function getEventImageAttribute($value){
+        return Storage::url($value);
+    }
+
+    public function getCoverImageAttribute($value){
         return Storage::url($value);
     }
 }

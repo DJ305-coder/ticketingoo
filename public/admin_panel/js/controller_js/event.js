@@ -79,6 +79,19 @@ $(document).ready(() => {
     });
 });
 
+$(document).ready(() => {
+    $(".preview1").change(function () {
+        const file = this.files[0];
+        if (file) {
+            let reader = new FileReader();
+            reader.onload = function (event) {
+                console.log(event.target.result);
+                $(".preview_image1").attr("src", event.target.result);
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+});
 
 $(function () {
     // var url = "{{url('')}}";

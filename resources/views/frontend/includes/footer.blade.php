@@ -1,3 +1,9 @@
+<style>
+ .list-unstyled li>a:hover{
+  padding-left:5px;
+  transition: 1s;
+ }
+</style>
 <footer class="container py-5">
   <div class="row">
     <div class="col-12 col-md">

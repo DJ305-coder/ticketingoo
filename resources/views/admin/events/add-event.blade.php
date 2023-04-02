@@ -8,7 +8,7 @@
                     Event List
                     <span class="pull-right">
                         <button class="btn common-btn btn-danger">
-                            <a href="{{url('events')}}">
+                            <a href="{{url('admin/events')}}">
                                 <i class="fa fa-arrow-circle-left"></i>
                                 Back</a>
                         </button>
@@ -65,10 +65,28 @@
                                                 <label id="datepicker-error" class="error" for="datepicker"></label>
                                             </div>
                                             <div class="col-lg-6">
+                                                <label>Event Time</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" autocomplete="off"  name="event_time" placeholder="Enter event time like  : 12:00"  value="{{!empty($event->event_time) ? $event->event_time : ''}}" /> 
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                
+                                            </div>
+                                            <div class="col-lg-6">
                                                 <div class="basic-form">
                                                     <div class="form-group">
                                                         <label>Presented by</label>
                                                         <input type="text" name="presented_by" id="presented_by" class="form-control input-flat" value="{{!empty($event->presented_by) ? $event->presented_by : ''}}" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="basic-form">
+                                                    <div class="form-group">
+                                                        <label>Ticket Price</label>
+                                                        <input type="text" name="ticket_price" id="ticket_price" class="form-control input-flat" value="{{!empty($event->ticket_price) ? $event->ticket_price : ''}}" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -78,18 +96,37 @@
                                         <label class="lablefnt">Upload Event Image<span style="color: red">*
                                                 <span style="color: red;font-size: 11px;">(size 375px X 175px)</span></label>
                                         <input name="event_image" class="form-control valid preview" id="event_image" type="file" accept="image/*" />
-
-                                        <!-- <label id="blog_image-error" class="error" for="blog_image">* Please select image.</label><br> -->
                                         <div>
                                             <img src="{{!empty($event->event_image) ? $event->event_image : asset('admin_panel/commonarea/dist/img/default.png')}}" id="preview_event_image" class="prof-photo mt-10 photo-height-fixed preview_image" width="150" />
                                         </div>
                                         <input type="hidden" name="old_image" id="old_image" value="{{!empty($event->event_image) ?  $event->event_image : ''}}">
+
+                                        <label class="lablefnt">Upload Cover Image<span style="color: red">*
+                                                <span style="color: red;font-size: 11px;">(size 375px X 175px)</span></label>
+                                        <input name="cover_image" class="form-control valid preview1" id="cover_image" type="file" accept="image/*" />
+                                        <div>
+                                            <img src="{{!empty($event->cover_image) ? $event->cover_image : asset('admin_panel/commonarea/dist/img/default.png')}}" id="preview_cover_image" class="prof-photo mt-10 photo-height-fixed preview_image1" width="150" />
+                                        </div>
+                                        <input type="hidden" name="old_cover_image" id="old_cover_image" value="{{!empty($event->cover_image) ?  $event->cover_image : ''}}">
                                     </div>
+                                    
                                     <div class="col-lg-6">
                                         <div class="basic-form">
                                             <div class="form-group">
-                                                <label>Writer and Directer</label>
-                                                <input type="text" name="writer_and_directers" id="writer_and_directers" class="form-control input-flat" value="{{!empty($event->writer_and_directers) ? $event->writer_and_directers : ''}}" />
+                                                <label>Writer </label>
+                                                <input type="text" name="writer" id="writer" class="form-control input-flat" value="{{!empty($event->writer) ? $event->writer : ''}}" />
+                                            </div>
+                                        </div>
+                                        <div class="basic-form">
+                                            <div class="form-group">
+                                                <label>Director</label>
+                                                <input type="text" name="director" id="director" class="form-control input-flat" value="{{!empty($event->director) ? $event->director : ''}}" />
+                                            </div>
+                                        </div>
+                                        <div class="basic-form">
+                                            <div class="form-group">
+                                                <label>Location</label>
+                                                <input type="text" name="location" id="location" class="form-control input-flat" value="{{!empty($event->location) ? $event->location : ''}}" />
                                             </div>
                                         </div>
                                         <div class="basic-form">
@@ -101,6 +138,15 @@
                                                     <option value="plays" {{!empty($event->event_type) && $event->event_type == 'plays' ? 'selected' : ''}} >Plays</option>
                                                     <option value="music" {{!empty($event->event_type) && $event->event_type == 'music' ? 'selected' : ''}}>Music</option>  
                                                 </select>
+                                            </div>
+                                        </div>  
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="">
+                                            <div class="card-body">
+                                                <label>Short Description</label>
+                                                <textarea name="short_description" id="short_description" class="form-control" autocomplete="off" >{{!empty($event->short_description) ? $event->short_description : ''}}</textarea>
+                                                <label id="description-error" class="error description-error" for="description"></label>
                                             </div>
                                         </div>
                                     </div>

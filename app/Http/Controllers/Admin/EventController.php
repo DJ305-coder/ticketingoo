@@ -70,6 +70,7 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
+       
         //checking server side validation
         $request->validate([
             'title' => 'required|string',
@@ -91,6 +92,11 @@ class EventController extends Controller
                     $imageName = time().'.'.$request->event_image->extension();  
                     $input['event_image'] = $request->event_image->storeAs('public/event_images', $imageName);
                 }
+
+                if($request->hasFile('cover_image')){
+                    $imageName = time().'.'.$request->cover_image->extension();  
+                    $input['cover_image'] = $request->cover_image->storeAs('public/cover_images', $imageName);
+                }
                 // slug
                 $input['date'] = date('Y-m-d',strtotime($input['date']));
                 $input['slug_url'] = Str::slug($input['title']);
@@ -110,6 +116,10 @@ class EventController extends Controller
                 if($request->hasFile('event_image')){
                     $imageName = time().'.'.$request->event_image->extension();  
                     $input['event_image'] = $request->event_image->storeAs('public/event_images', $imageName);
+                }
+                if($request->hasFile('cover_image')){
+                    $imageName = time().'.'.$request->cover_image->extension();  
+                    $input['cover_image'] = $request->cover_image->storeAs('public/cover_images', $imageName);
                 }
 
                 // slug
@@ -166,7 +176,7 @@ class EventController extends Controller
     public function edit($id)
     {
         $event = Event::where('id',$id)->first();
-
+        
         $theaters = Theater::latest()->get();
 
         return view('admin.events.add-event', compact('event','theaters'));
