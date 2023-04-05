@@ -2,7 +2,9 @@
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
     </IfModule>
-
+    <IfModule mod_mime.c>
+  AddType application/javascript .json
+</IfModule>
     RewriteEngine On
 
     # Handle Authorization Header
@@ -18,4 +20,6 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+
+    
 </IfModule>

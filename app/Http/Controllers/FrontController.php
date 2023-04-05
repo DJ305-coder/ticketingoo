@@ -52,7 +52,10 @@ class FrontController extends Controller
         }
     }
 
-    
+
+    public function show_detail(){
+        return view('show_detail');
+    }
     // public function event_detail(){
     //     return view('event_detail');
     // }

@@ -74,6 +74,8 @@ Route::get('test', function(Request $request){
 });
 
 
+Route::get('show-detail',[FrontController::class,'show_detail']);
+
 
 
 
