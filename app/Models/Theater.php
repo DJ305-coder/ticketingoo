@@ -19,4 +19,9 @@ class Theater extends Model
         'created_by',
         'modified_by',
     ];
+
+    public function events()
+    {
+        return $this->hasMany('App\Models\Event');
+    }
 }

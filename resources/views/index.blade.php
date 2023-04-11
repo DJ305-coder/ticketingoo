@@ -65,7 +65,7 @@
                 <div class="display-4 text-center my-2 text-light">Available Shows</div>
                 <div class="container-fluid d-flex flex-wrap justify-content-center ">
                     @foreach($events as $event)
-                    <a href="{{url('event-detail')}}/{{$event->id}}" class="card-container my-2 mx-2">
+                    <a href="{{url('show-detail')}}/{{$event->id}}" class="card-container my-2 mx-2">
                         <img src="{{$event->event_image}}" class="card-img" alt="...">
                         <div class="bottom-left">
                             <h5 class="card-title">{{$event->title}}</h5>

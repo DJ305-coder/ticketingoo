@@ -39,4 +39,9 @@ class Event extends Model
     public function getCoverImageAttribute($value){
         return Storage::url($value);
     }
+
+    public function theater()
+    {
+        return $this->belongsTo('App\Models\Theater');
+    }
 }

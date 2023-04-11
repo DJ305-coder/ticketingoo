@@ -53,10 +53,15 @@ class FrontController extends Controller
     }
 
 
-    public function show_detail(){
-        return view('show_detail');
+    public function show_detail($id){
+        try{
+            $event = Event::whereId($id)->first();
+            return view('show_detail',compact('event'));
+        }catch(\Exception $e){
+            $message = $e->getMessage();
+            return response()->json(['Error' => $message]);
+        }
+        // return view('show_detail');
     }
-    // public function event_detail(){
-    //     return view('event_detail');
-    // }
+
 }

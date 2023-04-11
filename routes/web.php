@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\TheaterController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\PaymentController;
 
 use Illuminate\Http\Request;
 
@@ -74,7 +75,7 @@ Route::get('test', function(Request $request){
 });
 
 
-Route::get('show-detail',[FrontController::class,'show_detail']);
+Route::get('/show-detail/{id}',[FrontController::class,'show_detail']);
 
 
 
@@ -91,3 +92,5 @@ Route::view('/terms-conditions','terms_conditions');
 Route::view('/delivery-shipping-policy','delivery_shipping_policy');
 Route::view('/cancellation-refund','cancellation_refund');
 
+// payment routes
+Route::post('payment', [PaymentController::class,'order']);
